@@ -34,7 +34,6 @@ const observer = new IntersectionObserver((e) => {
       ...currentVisibleArr,
       ...passengersArr.slice(startIndex, lastIndex),
     ]
-    console.log(currentVisibleArr)
     renderPassengers(currentVisibleArr)
   }
 }, options)
@@ -58,7 +57,7 @@ form.addEventListener('submit', (e) => {
       p.name.toLowerCase().includes(searchText) ||
       p.gender.toLowerCase().includes(searchText) ||
       p.age.toString().includes(searchText) ||
-      (p.survived ? 'выжил' : 'погиб').includes(searchText)
+      (p.survived ? 'alive' : 'dead').includes(searchText)
     )
   })
   table.innerHTML = ''
